@@ -1,9 +1,18 @@
 return {
-  "oxfist/night-owl.nvim",
-  lazy = false,
+  "folke/tokyonight.nvim",
   priority = 1000,
+  lazy = false,
   config = function()
-    require("night-owl").setup()
-    vim.cmd("colorscheme night-owl")
+    require("tokyonight").setup({
+      style = "night",
+      styles = {
+        comments = { italic = true },
+        keywords = { italic = true },
+        sidebars = "dark",
+        floats = "dark",
+      },
+      dim_inactive = true,
+    })
+    vim.cmd("colorscheme tokyonight")
   end,
 }

@@ -13,7 +13,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 
 -- Disable mode if needed
--- vim.opt.mode = false
+vim.opt.showmode = false
 
 -- Set clipboard support
 vim.opt.clipboard = "unnamedplus"
