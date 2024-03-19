@@ -17,7 +17,27 @@ return {
         lualine_b = {'branch', 'diff', 'diagnostics'},
         lualine_c = {'filename'},
         lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
+        lualine_y = {
+          {
+            function()
+              local lsps = vim.lsp.get_active_clients({ bufnr = vim.fn.bufnr() })
+              local icon = require("nvim-web-devicons").get_icon_by_filetype(vim.api.nvim_buf_get_option(0, "filetype"))
+              if lsps and #lsps > 0 then
+                local names = {}
+                for _, lsp in ipairs(lsps) do
+                  table.insert(names, lsp.name)
+                end
+                return string.format("%s %s", table.concat(names, ", "), icon)
+              else
+                return icon or ""
+              end
+            end,
+            on_click = function()
+              vim.api.nvim_command("LspInfo")
+            end,
+          },
+          'progress'
+        },
         lualine_z = {'location'}
       },
       inactive_sections = {
