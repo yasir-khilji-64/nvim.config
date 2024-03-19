@@ -1,6 +1,7 @@
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save current buffer" })
 vim.keymap.set("n", "<C-w>", "<cmd>q<CR>", { desc = "Quit current buffer" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear highlights" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Close current buffer" })
 
 -- Window and Tab management
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
