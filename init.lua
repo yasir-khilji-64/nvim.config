@@ -1,3 +1,3 @@
-require("core.options")
-require("core.keymaps")
-require("package-manager")
+require 'core.options'
+require 'core.keymaps'
+require 'package-manager'
